@@ -4,7 +4,7 @@ from random import choice, randrange
 import pygame as pg
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
-RES = WIDTH, HEIGHT = 1650, 600
+RES = WIDTH, HEIGHT = 1450, 400
 FONT_SIZE = 10
 ALPHA = 100
 
@@ -111,8 +111,8 @@ while running:
 
     pg.display.update()
 
-    zoom_width = WIDTH // 3 + zoom_step
-    zoom_height = HEIGHT // 3 + zoom_step
+    zoom_width = WIDTH // 2 + zoom_step
+    zoom_height = HEIGHT // 2 + zoom_step
     zoomed_screen = pg.transform.smoothscale(screen, (zoom_width, zoom_height))
 
     zoomed_screen.set_alpha(ALPHA - 20)
@@ -123,5 +123,5 @@ while running:
         if zoom_step > 450:
             k = 0
 
-    clock.tick(60)
+    clock.tick(40)
     step += 0.01
